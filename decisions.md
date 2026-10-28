@@ -81,6 +81,16 @@ period the day after `endsOn`, so no paid day is lost; a payment for an expired
 membership or a new member starts today. The API and the app must use this same rule
 so the next payment date shown at reception matches what is stored.
 
+### 17. Cash cut: blind count since the last cut, with a fixed float
+A cash cut covers every payment recorded at the gym since the previous cut, whoever
+took it, so it works for one or several shifts a day without configuring schedules.
+Each gym has a fixed cash float that stays in the drawer. Staff counts all the cash in
+the drawer and enters it as one total **before** seeing what is expected (blind count),
+so the count is not adjusted to match; once confirmed, the count cannot be edited.
+Expected cash is the float plus the period's cash payments, and staff withdraws the
+counted amount minus the float. Card payments are listed and totalled but not counted.
+A difference does not block the cut, but closing it requires a note explaining it.
+
 ## Open decisions
 
 - **QR reading at the entrance:** the reception device's camera in the app, a USB

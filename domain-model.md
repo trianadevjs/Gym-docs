@@ -31,7 +31,8 @@ A client of the SaaS.
 ### Gym
 A location of an organization. Every operational record belongs to a gym from day one,
 even while an organization has only one gym.
-- `id`, `organizationId`, `name`, `address`, `timeZone`
+- `id`, `organizationId`, `name`, `address`, `timeZone`, `cashFloatCents` (the fixed float
+  that stays in the reception drawer)
 
 ### User
 Anyone who logs in. A single role per user.
@@ -62,5 +63,9 @@ A gym entry recorded from a QR scan.
 
 ### CashCut
 Closing of the cash register for a period or shift.
-- `id`, `organizationId`, `gymId`, `performedById`, `periodStart`, `periodEnd`,
-  `expectedTotalCents`, `countedTotalCents`, `createdAt`
+- `id`, `organizationId`, `gymId`, `number` (sequential per gym), `performedById`,
+  `periodStart` (the previous cut's `periodEnd`), `periodEnd` (when the count was
+  confirmed), `floatCents`, `cashSalesCents`, `cardSalesCents`, `expectedTotalCents`
+  (float + cash sales), `countedTotalCents`, `note` (required when counted ≠ expected),
+  `closedAt`
+- Payments link to the cut whose period contains their `paidAt`. See decision 17.
