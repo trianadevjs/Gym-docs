@@ -39,6 +39,8 @@ Anyone who logs in. A single role per user.
 - `id`, `organizationId`, `firstName`, `lastName`, `email`, `passwordHash`, `role`
 - `gymId` — required for `MANAGER` and `RECEPTIONIST`; not used for `OWNER`
 - `email` is unique within an organization
+- `active` (retired staff cannot sign in) and `temporaryPasswordExpiresAt` (set while the
+  password is a temporary one that must be replaced at first sign-in); see decision 19
 
 ### Plan
 A gym's configurable catalog of plans, so prices can change without code changes.

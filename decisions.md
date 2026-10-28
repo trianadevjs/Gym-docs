@@ -110,6 +110,25 @@ gym) is cached so a device reopened offline stays usable read-only; signing in i
 requires a connection. Forgotten passwords are reset by a manager or owner; there is no
 self-service reset or PIN in the MVP.
 
+### 19. Who manages gyms, plans and staff
+Owners manage every gym of their organization: they create gyms and set each one's
+name, address and cash float, and they manage the plans and staff (managers and
+receptionists) of any gym. Managers manage the plans and receptionists of their own
+gym and can read its details, but cannot change the float or manage other managers.
+Receptionists have no access to the catalog. The API enforces these rules; the app only
+hides what a role cannot do.
+
+Plans are never deleted, because past payments reference them: they are retired and can
+be reactivated, and reception only offers active plans. Two active plans of a gym cannot
+share a name. A price change applies to charges from that moment on and never changes
+past payments. A float change applies from the next cash cut; the cut in progress keeps
+the float it opened with.
+
+New staff accounts and password resets get a system-generated temporary password of 8
+digits, shown once to the manager or owner to hand over in person. It is valid for 24
+hours and works only to set the person's own password (at least 8 characters) at their
+first sign-in. Retired staff cannot sign in, and their payments and cash cuts are kept.
+
 ## Open decisions
 
 - **QR reading at the entrance:** the reception device's camera in the app, a USB
