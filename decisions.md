@@ -51,3 +51,29 @@ Next.js adds server-side rendering, which brings little here and makes offline h
 
 ### 11. Documentation in English
 All documentation in this repository is written in English.
+
+### 12. Multi-tenant SaaS
+The product is sold to many gyms and franchises, not built for a single one. Each client
+is an `Organization` (tenant) with one or more gyms. A single database and deployment
+serve every tenant, and every tenant-scoped table carries an `organizationId` that the
+API filters by. This extends decision 2: the multi-gym model now sits under an
+organization. See [Domain model](domain-model.md).
+
+### 13. Product brand, no white-label
+Every client sees the product's brand; a gym appears only as its name and data. This
+keeps one design for all clients. "Gym Manager" is a working name; there is no final
+name, logo or color palette yet.
+
+### 14. Spanish (Mexico) interface, MXN
+The market is Mexico. The interface is in Spanish and prices are in MXN, stored as
+integer cents. Code and documentation stay in English.
+
+### 15. Reception works on PC or tablet
+The front desk device varies by gym, so reception screens must work with mouse,
+keyboard and touch.
+
+## Open decisions
+
+- **QR reading at the entrance:** the reception device's camera in the app, a USB
+  scanner, or something else.
+- **Positioning:** what sets the product apart from other gym management software.
