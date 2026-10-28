@@ -72,6 +72,15 @@ integer cents. Code and documentation stay in English.
 The front desk device varies by gym, so reception screens must work with mouse,
 keyboard and touch.
 
+### 16. Membership periods are inclusive calendar days
+A membership's `startsOn` and `endsOn` are dates in the gym's time zone, and `endsOn` is
+the last valid day. A plan period ends at `start + duration − 1 day` (a 1-month plan
+starting 28 Oct ends 27 Nov; a 1-day visit starts and ends the same day). A payment
+made while the membership is still valid (`endsOn` is today or later) starts the new
+period the day after `endsOn`, so no paid day is lost; a payment for an expired
+membership or a new member starts today. The API and the app must use this same rule
+so the next payment date shown at reception matches what is stored.
+
 ## Open decisions
 
 - **QR reading at the entrance:** the reception device's camera in the app, a USB

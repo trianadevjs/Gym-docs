@@ -46,7 +46,10 @@ A gym's configurable catalog of plans, so prices can change without code changes
 
 ### Membership
 A member's right to use **one specific gym** (memberships are per location).
-- `id`, `organizationId`, `userId`, `gymId`, `startsAt`, `endsAt` (the next payment date)
+- `id`, `organizationId`, `userId`, `gymId`, `startsOn`, `endsOn`
+- `startsOn` and `endsOn` are calendar dates in the gym's time zone, both inclusive:
+  `endsOn` is the last day the member may enter, and the next payment is due the day
+  after. See decision 16 for how a payment extends them.
 
 ### Payment
 A payment for a plan, which extends a membership. Amounts in MXN cents.
