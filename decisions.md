@@ -129,6 +129,17 @@ digits, shown once to the manager or owner to hand over in person. It is valid f
 hours and works only to set the person's own password (at least 8 characters) at their
 first sign-in. Retired staff cannot sign in, and their payments and cash cuts are kept.
 
+### 20. Member records at reception
+Reception lists the members of the gym the staff member is signed in to. Any staff role
+can register a member and correct their name, phone and email; members are never deleted,
+because payments reference them. The phone (10 digits) is required and unique within the
+organization, so registering the same phone again leads to the existing member instead of
+creating a duplicate. The email is optional; the future member app will use it to sign
+in. The member list is ordered by next payment date, overdue first, because it is mostly
+used to see who owes, and it can be filtered by membership status. Phones are masked in
+lists and shown in full on the member's own record. Offline, the list and records stay
+readable; registering and correcting need a connection.
+
 ## Open decisions
 
 - **QR reading at the entrance:** the reception device's camera in the app, a USB

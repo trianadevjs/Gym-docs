@@ -38,7 +38,9 @@ even while an organization has only one gym.
 Anyone who logs in. A single role per user.
 - `id`, `organizationId`, `firstName`, `lastName`, `email`, `passwordHash`, `role`
 - `gymId` — required for `MANAGER` and `RECEPTIONIST`; not used for `OWNER`
-- `email` is unique within an organization
+- `email` is unique within an organization; required for staff, optional for `MEMBER`
+- `phone` — required for `MEMBER` (10 digits) and unique within an organization;
+  `photoUrl` optional; see decision 20
 - `active` (retired staff cannot sign in) and `temporaryPasswordExpiresAt` (set while the
   password is a temporary one that must be replaced at first sign-in); see decision 19
 
