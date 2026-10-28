@@ -91,6 +91,25 @@ Expected cash is the float plus the period's cash payments, and staff withdraws 
 counted amount minus the float. Card payments are listed and totalled but not counted.
 A difference does not block the cut, but closing it requires a note explaining it.
 
+### 18. Staff sign-in on shared front-desk devices
+Staff sign in with email and password. Because an email is unique only within an
+organization, the API checks the password first and, when the same credentials match
+accounts in more than one organization, asks which one to enter; it never reveals which
+organizations an email belongs to before the password is verified. Managers and
+receptionists land on their own gym; owners, who have no gym, pick one each time they
+sign in. Member accounts are told that member features come later.
+
+Front-desk devices are shared by the whole team, so each device remembers up to five
+people who signed in on it (name, role, gym and email, never a password) and the next
+sign-in is choosing a name plus the password. Anyone can remove a person from that list.
+"Salir" ends the session; there is no automatic sign-out in the MVP.
+
+The access token lives in memory and the refresh token in an httpOnly cookie, so no
+token is stored where page scripts can read it. The signed-in profile (who and which
+gym) is cached so a device reopened offline stays usable read-only; signing in itself
+requires a connection. Forgotten passwords are reset by a manager or owner; there is no
+self-service reset or PIN in the MVP.
+
 ## Open decisions
 
 - **QR reading at the entrance:** the reception device's camera in the app, a USB
