@@ -4,9 +4,13 @@ Product and technical documentation for the gym franchise management system.
 
 ## Product overview
 
-A management system for a gym franchise with multiple locations. It covers member
-registration, membership payments, gym access via QR code, attendance tracking and
-reports for gym managers and the franchise owner.
+A multi-tenant SaaS for gyms and gym franchises in Mexico. Each client organization
+can have one or more gyms (locations). It covers member registration, membership
+payments, gym access via QR code, attendance tracking and reports for gym managers
+and the franchise owner.
+
+The interface is in Spanish (Mexico) and prices are in MXN. Code and documentation are
+in English. "Gym Manager" is a working name; there is no final brand yet.
 
 ## Repositories
 
